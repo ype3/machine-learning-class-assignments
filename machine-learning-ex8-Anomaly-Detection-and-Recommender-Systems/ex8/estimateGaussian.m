@@ -21,7 +21,11 @@ sigma2 = zeros(n, 1);
 %               should contain variance of the i-th feature.
 %
 
-
+for i = 1 : n
+    mu(i) = mean(X(:,i));
+    sigma2(i) = var(X(:,i)) *(m - 1) / m;
+    %note that in matlab, the var function will use 1/(m-1) imstead of 1/m when computing sigma^2
+end
 
 
 
