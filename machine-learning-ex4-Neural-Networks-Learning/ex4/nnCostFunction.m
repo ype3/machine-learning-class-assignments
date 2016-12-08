@@ -86,9 +86,9 @@ delta2 = delta3 * Theta2(:, 2:end) .* sigmoidGradient(z2);
 %delta2 = delta2(:, 2:end);
 
 Delta2 = delta3' * a2;
-Theta2_grad = Delta2 / m;
+Theta2_grad = Theta2_grad + Delta2 / m;
 
-Theta1_grad = delta2' *  a1 / m;
+Theta1_grad = Theta1_grad + delta2' *  a1 / m;
 
 
 
